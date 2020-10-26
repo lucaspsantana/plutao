@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Plutao"
+run/main_scene="res://src/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -60,6 +61,15 @@ ui_down={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_physics/layer_1="Player"
+2d_render/layer_2="Enemy"
+2d_physics/layer_2="Enemy"
+2d_render/layer_3="World"
+2d_physics/layer_3="World"
 
 [rendering]
 
