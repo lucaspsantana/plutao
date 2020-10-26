@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed: = 400
+export var speed: = 250
 signal hit
 var target: = Vector2()
 
@@ -13,10 +13,10 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
 		target = event.position
-		shoot()
+		limit_shoots()
 	if event is InputEventScreenDrag:
 		target = event.position
-		shoot()
+		limit_shoots()
 		#speed = event.get_speed()
 
 func _physics_process(delta):
@@ -46,7 +46,10 @@ func _on_EnemyDetector_body_entered(body):
 
 func shoot():
 	var bullet: = preload("res://src/Bullet.tscn")
-	var node: = bullet.instance()
-	node.position = $BulletPosition.position
-	add_child(node)
+	var bulletNode: = bullet.instance()
+	bulletNode.global_position = $BulletPosition.global_position
+	get_parent().add_child(bulletNode)
 
+func limit_shoots():
+	if get_tree().get_nodes_in_group("bullet").size() < 20:
+		shoot()

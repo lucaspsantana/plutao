@@ -7,7 +7,9 @@
 radius = 2.70385
 height = 16.6836
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=[
+"bullet",
+]]
 position = Vector2( 226.795, 418.366 )
 collision_mask = 2
 script = ExtResource( 2 )
