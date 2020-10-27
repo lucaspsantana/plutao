@@ -10,7 +10,7 @@ height = 29.5431
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 100, 300 )
-collision_mask = 12
+collision_mask = 14
 script = ExtResource( 2 )
 
 [node name="ship" type="Sprite" parent="."]
@@ -20,6 +20,8 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 shape = SubResource( 2 )

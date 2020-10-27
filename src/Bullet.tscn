@@ -12,7 +12,7 @@ height = 16.6836
 ]]
 position = Vector2( 226.795, 418.366 )
 collision_layer = 4
-collision_mask = 10
+collision_mask = 11
 script = ExtResource( 2 )
 
 [node name="icon" type="Sprite" parent="."]
@@ -25,4 +25,5 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -0.314983, -0.78745 )
 scale = Vector2( 0.370039, 1.07875 )
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

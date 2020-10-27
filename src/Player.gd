@@ -47,7 +47,7 @@ func _on_EnemyDetector_body_entered(body):
 func shoot():
 	var bullet: = preload("res://src/Bullet.tscn")
 	var bulletNode: = bullet.instance()
-	bulletNode.global_position = $BulletPosition.global_position
+	bulletNode.start(global_position, -1, self)
 	get_parent().add_child(bulletNode)
 
 func limit_shoots():
