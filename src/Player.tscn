@@ -29,5 +29,7 @@ position = Vector2( 0.116959, -41.5085 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="."]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
