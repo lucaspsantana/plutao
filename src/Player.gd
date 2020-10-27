@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed: = 250
+export var speed: = 500
 signal hit
 var target: = Vector2()
 
@@ -9,14 +9,13 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
+	$Timer.start()
 
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
 		target = event.position
-		limit_shoots()
 	if event is InputEventScreenDrag:
 		target = event.position
-		limit_shoots()
 		#speed = event.get_speed()
 
 func _physics_process(delta):
@@ -28,6 +27,7 @@ func _physics_process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+
 
 	
 func start(pos):
@@ -51,5 +51,9 @@ func shoot():
 	get_parent().add_child(bulletNode)
 
 func limit_shoots():
-	if get_tree().get_nodes_in_group("bullet").size() < 20:
+	if get_tree().get_nodes_in_group("bullet").size() < 50:
 		shoot()
+
+
+func _on_Timer_timeout():
+	limit_shoots()
