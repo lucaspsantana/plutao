@@ -24,6 +24,10 @@ config/name="Plutao"
 run/main_scene="res://src/Levels/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://src/settings.gd"
+
 [display]
 
 window/size/width=480
