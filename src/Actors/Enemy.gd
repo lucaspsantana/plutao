@@ -30,7 +30,7 @@ func ShootTimer(delta):
 		cd = attack_speed
 
 func Shoot(Gun_Global_Position):
-	var bullet = load("res://src/Bullet.tscn").instance()
+	var bullet = load("res://src/Objects/Bullet.tscn").instance()
 	bullet.start(Gun_Global_Position, 1, self)
 	get_parent().add_child(bullet)
 

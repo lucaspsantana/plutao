@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://src/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/bullet.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.70385
@@ -10,14 +10,19 @@ height = 16.6836
 [node name="Bullet" type="Area2D" groups=[
 "bullet",
 ]]
-position = Vector2( 226.795, 418.366 )
+position = Vector2( 226.461, 417.198 )
 collision_layer = 4
 collision_mask = 11
-script = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 406.71, 428.784 ],
+"_edit_vertical_guides_": [ 222.269, 231.308 ]
+}
 
 [node name="icon" type="Sprite" parent="."]
-scale = Vector2( 0.114736, 0.305546 )
-texture = ExtResource( 1 )
+position = Vector2( 0.435568, 0.460309 )
+scale = Vector2( 0.167811, 0.214644 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

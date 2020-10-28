@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var speed: = 500
 signal hit
 var target: = Vector2()
+onready var anim_Player: AnimationPlayer = get_node("ShootAnimation") 
 
 var screen_size
 
@@ -42,12 +43,13 @@ func _on_EnemyDetector_body_entered(body):
 		$CollisionShape2D.set_deferred("disabled", true)
 		$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)
 		print(body.name)
-		hide()
+		queue_free()
 
 func shoot():
-	var bullet: = preload("res://src/Bullet.tscn")
+	anim_Player.play("shoot")
+	var bullet: = preload("res://src/Objects/Bullet.tscn")
 	var bulletNode: = bullet.instance()
-	bulletNode.start(global_position, -1, self)
+	bulletNode.start($BulletPosition.global_position, -1, self)
 	get_parent().add_child(bulletNode)
 
 func limit_shoots():

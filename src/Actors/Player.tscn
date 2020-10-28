@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/rocket-ship.png" type="Texture" id=2]
+[ext_resource path="res://assets/fire3.png" type="Texture" id=3]
+[ext_resource path="res://assets/fire1.png" type="Texture" id=4]
+[ext_resource path="res://assets/fire4.png" type="Texture" id=5]
+[ext_resource path="res://assets/fire2.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/spaceShip2spaceShip2.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/spaceShip.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 18.2063, 21.7617 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 17.9414, 23.541 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fire:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 100, 300 )
+collision_mask = 14
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 267.296, 330.701 ],
+"_edit_vertical_guides_": [ 123.898, 77.179 ]
+}
+
+[node name="ship" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="spaceShip2" type="Sprite" parent="."]
+scale = Vector2( 0.226641, 0.230275 )
+texture = ExtResource( 7 )
+
+[node name="fire" type="Sprite" parent="."]
+position = Vector2( 0.227417, -30.0178 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+shape = SubResource( 5 )
+
+[node name="BulletPosition" type="Position2D" parent="."]
+position = Vector2( -0.303962, -44.1591 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ShootAnimation" type="AnimationPlayer" parent="."]
+anims/shoot = SubResource( 3 )
+
+[node name="spaceShip" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.135746, 0.11585 )
+texture = ExtResource( 8 )
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
