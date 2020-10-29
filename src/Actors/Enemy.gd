@@ -39,4 +39,5 @@ func _on_BulletDetector_area_entered(area: Area2D) -> void:
 		return
 	
 	print("Tomou dano - " + String(area.actor.name))
+	Settings.score +=50
 	TakeDamage()

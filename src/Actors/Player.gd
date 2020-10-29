@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export var speed: = 500
-signal hit
 var target: = Vector2()
 onready var anim_Player: AnimationPlayer = get_node("ShootAnimation") 
 
@@ -39,10 +38,10 @@ func start(pos):
 
 func _on_EnemyDetector_body_entered(body):
 	if body.name != "Player":
-		emit_signal("hit")
 		$CollisionShape2D.set_deferred("disabled", true)
 		$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)
-		print(body.name)
+		Settings.death = true
+		get_tree().change_scene("res://src/gui/Screens.tscn")
 		queue_free()
 
 func shoot():
