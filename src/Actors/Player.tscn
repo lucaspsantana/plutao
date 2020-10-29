@@ -9,10 +9,10 @@
 [ext_resource path="res://assets/player/spaceShip2spaceShip2.png" type="Texture" id=7]
 [ext_resource path="res://assets/player/spaceShip.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.2063, 21.7617 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.9414, 23.541 )
 
 [sub_resource type="Animation" id=3]
@@ -78,14 +78,14 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="EnemyDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="BulletPosition" type="Position2D" parent="."]
 position = Vector2( -0.303962, -44.1591 )
