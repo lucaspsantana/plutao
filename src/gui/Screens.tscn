@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/audio/music_back_guitar.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://src/gui/Screens.gd" type="Script" id=3]
+[ext_resource path="res://src/gui/TitleScreens.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/gui/GameOver.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/gui/Settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Asteroid.tscn" type="PackedScene" id=7]
+
+[node name="Screens" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Asteroid" parent="." instance=ExtResource( 7 )]
+position = Vector2( 319.407, 111.506 )
+
+[node name="Asteroid2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 151.228, 358.729 )
+
+[node name="Asteroid3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 115.91, 720.315 )
+
+[node name="Asteroid4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 379.952, 493.273 )
+
+[node name="TitleScreens" parent="." instance=ExtResource( 4 )]
+
+[node name="Settings" parent="." instance=ExtResource( 6 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 5 )]
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
