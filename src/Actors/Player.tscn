@@ -92,6 +92,7 @@ position = Vector2( -0.303962, -44.1591 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+autostart = true
 
 [node name="ShootAnimation" type="AnimationPlayer" parent="."]
 anims/shoot = SubResource( 3 )
@@ -100,5 +101,15 @@ anims/shoot = SubResource( 3 )
 visible = false
 scale = Vector2( 0.135746, 0.11585 )
 texture = ExtResource( 8 )
+
+[node name="Life" type="Label" parent="."]
+margin_left = -37.0
+margin_top = 41.0
+margin_right = 41.0
+margin_bottom = 69.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

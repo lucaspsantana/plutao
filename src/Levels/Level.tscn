@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy1.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music_back.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/space.jpg" type="Texture" id=7]
+[ext_resource path="res://src/Objects/AsteroidsGenerator.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node"]
 script = ExtResource( 5 )
@@ -53,3 +54,5 @@ position = Vector2( 92.8628, 61.7647 )
 stream = ExtResource( 6 )
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 3 )]
+
+[node name="Node" parent="." instance=ExtResource( 8 )]

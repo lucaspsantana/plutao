@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Test/Test.gd" type="Script" id=2]
+
+[node name="AsteroidsGenerator" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Position2D1" type="Position2D" parent="."]
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 127.245, 2.37839 )
+
+[node name="Position2D3" type="Position2D" parent="."]
+position = Vector2( 246.166, 3.56763 )
+
+[node name="Position2D4" type="Position2D" parent="."]
+position = Vector2( 366.276, 1.18921 )
+
+[node name="Position2D5" type="Position2D" parent="."]
+position = Vector2( 481.629, 1.18922 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
