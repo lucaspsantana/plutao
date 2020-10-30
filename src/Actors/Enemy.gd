@@ -7,6 +7,8 @@ var attack_speed
 var cd = 0
 var guns = []
 
+var onscreen = false
+
 var velocity
 
 func _physics_process(delta: float) -> void:
@@ -21,6 +23,9 @@ func TakeDamage():
 		queue_free()
 
 func ShootTimer(delta):
+	if(!onscreen):
+		return
+	
 	cd -= delta
 	
 	if(cd <= 0):
@@ -38,6 +43,8 @@ func _on_BulletDetector_area_entered(area: Area2D) -> void:
 	if(area.actor == self):
 		return
 	
-	print("Tomou dano - " + String(area.actor.name))
 	Settings.score +=50
 	TakeDamage()
+
+func _on_VisibilityNotifier2D_viewport_entered(viewport: Viewport) -> void:
+	onscreen = true
