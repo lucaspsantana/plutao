@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var speed: = 500
 var target: = Vector2()
-onready var anim_Player: AnimationPlayer = get_node("ShootAnimation") 
+onready var anim_Player: AnimationPlayer = get_node("animation") 
 var life: = 20
 
 var screen_size
@@ -18,6 +18,8 @@ func _on_EnemyDetector_area_entered(area):
 			$CollisionShape2D.set_deferred("disabled", true)
 			$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)
 			Settings.death = true
+			anim_Player.play("explosion")
+			yield(anim_Player, "animation_finished")
 			get_tree().change_scene("res://src/gui/Screens.tscn")
 			queue_free()
 			
