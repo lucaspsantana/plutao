@@ -7,7 +7,6 @@ var bar_yellow: = preload("res://assets/images/barHorizontal_yellow.png")
 onready var healthbar = $HealthBar
 
 func _ready():
-	hide()
 	if get_parent() and get_parent().get("max_health"):
 		healthbar.max_value = get_parent().max_health
 		
@@ -20,6 +19,4 @@ func update_healthBar(value):
 		healthbar.texture_progress = bar_yellow
 	if value < healthbar.max_value * 0.35:
 		healthbar.texture_progress = bar_red
-	if value < healthbar.max_value:
-		show()
 	healthbar.value = value
