@@ -14,6 +14,7 @@ func _on_Timer_timeout():
 func _on_EnemyDetector_area_entered(area):
 	if area.name != "Player":
 		life -=1
+		$HealthDisplay.update_healthBar(life)
 		if life <= 0:
 			$CollisionShape2D.set_deferred("disabled", true)
 			$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)

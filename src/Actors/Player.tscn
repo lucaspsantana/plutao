@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/rocket-ship.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/images/explosion2/Ativo 7.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/explosion2/Ativo 8.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/explosion2/Ativo 9.png" type="Texture" id=17]
+[ext_resource path="res://src/Objects/HealthBar.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.2063, 21.7617 )
@@ -188,10 +189,12 @@ scale = Vector2( 0.135746, 0.11585 )
 texture = ExtResource( 8 )
 
 [node name="Life" type="Label" parent="."]
-margin_left = -37.0
-margin_top = 41.0
-margin_right = 41.0
-margin_bottom = 69.0
+visible = false
+margin_left = 34.9642
+margin_top = 39.5635
+margin_right = 67.9642
+margin_bottom = 63.5635
+text = "20"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -200,6 +203,9 @@ __meta__ = {
 visible = false
 position = Vector2( -9, 1 )
 texture = ExtResource( 12 )
+
+[node name="HealthDisplay" parent="." instance=ExtResource( 18 )]
+position = Vector2( -30.7621, 41.2037 )
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
