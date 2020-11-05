@@ -8,10 +8,10 @@
 script = ExtResource( 3 )
 
 [node name="TextScore" type="Label" parent="."]
-margin_left = 16.3439
-margin_top = 11.9116
-margin_right = 78.3439
-margin_bottom = 36.9116
+margin_left = 22.3439
+margin_top = 32.9116
+margin_right = 117.344
+margin_bottom = 70.9116
 custom_fonts/font = ExtResource( 1 )
 text = "Score"
 __meta__ = {
@@ -19,10 +19,10 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="."]
-margin_left = 86.402
-margin_top = 4.92253
-margin_right = 126.402
-margin_bottom = 70.9225
+margin_left = 130.402
+margin_top = 26.28
+margin_right = 181.402
+margin_bottom = 113.28
 custom_fonts/font = ExtResource( 2 )
 text = "0"
 __meta__ = {

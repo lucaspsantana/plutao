@@ -31,10 +31,10 @@ position = Vector2( 235.265, 773.249 )
 layer = -100
 
 [node name="space" type="TextureRect" parent="CanvasLayer"]
-margin_left = -20.0
-margin_top = 850.0
-margin_right = 844.0
-margin_bottom = 1381.0
+margin_left = -19.0
+margin_top = 1289.0
+margin_right = 1284.0
+margin_bottom = 2049.0
 rect_rotation = -90.1946
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -23,15 +23,15 @@ position = Vector2( 115.91, 720.315 )
 [node name="Asteroid4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 379.952, 493.273 )
 
-[node name="TitleScreens" parent="." instance=ExtResource( 4 )]
-
-[node name="Settings" parent="." instance=ExtResource( 6 )]
-
-[node name="GameOver" parent="." instance=ExtResource( 5 )]
-
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="GameOver" parent="." instance=ExtResource( 5 )]
+
+[node name="Settings" parent="." instance=ExtResource( 6 )]
+
+[node name="TitleScreens" parent="." instance=ExtResource( 4 )]
