@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/rocket-ship.png" type="Texture" id=2]
@@ -18,6 +18,11 @@
 [ext_resource path="res://assets/images/explosion2/Ativo 8.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/explosion2/Ativo 9.png" type="Texture" id=17]
 [ext_resource path="res://src/Objects/HealthBar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Objects/Propulsion.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/images/turbine/Ativo 1.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/turbine/Ativo 5.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/turbine/Ativo 2.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/turbine/Ativo 3.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.2063, 21.7617 )
@@ -140,6 +145,126 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "propulsion"
+length = 0.16
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("propulsion:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 0.00866846, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("propulsion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.16 ),
+"transitions": PoolRealArray( 103.968, 36.7584, 26.9087, 68.5936, 1 ),
+"update": 0,
+"values": [ Vector2( -12.9538, 33.4077 ), Vector2( -12.769, 37.0408 ), Vector2( -12.0808, 39.3892 ), Vector2( -12.4636, 46.4348 ), Vector2( -12.1039, 45.7988 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "propulsion"
+length = 0.16
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("propulsion:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 0.00866846, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("propulsion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.16 ),
+"transitions": PoolRealArray( 103.968, 36.7584, 26.9087, 68.5936, 1 ),
+"update": 0,
+"values": [ Vector2( -12.9538, 33.4077 ), Vector2( -12.769, 37.0408 ), Vector2( -12.0808, 39.3892 ), Vector2( -12.4636, 46.4348 ), Vector2( -12.1039, 45.7988 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "propulsion"
+length = 0.16
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("propulsion:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 0.00866846, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("propulsion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.16 ),
+"transitions": PoolRealArray( 103.968, 36.7584, 26.9087, 68.5936, 1 ),
+"update": 0,
+"values": [ Vector2( -12.9538, 33.4077 ), Vector2( -12.769, 37.0408 ), Vector2( -12.0808, 39.3892 ), Vector2( -12.4636, 46.4348 ), Vector2( -12.1039, 45.7988 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "propulsion"
+length = 0.16
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("propulsion:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 0.00866846, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("propulsion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.16 ),
+"transitions": PoolRealArray( 103.968, 36.7584, 26.9087, 68.5936, 1 ),
+"update": 0,
+"values": [ Vector2( -12.9538, 33.4077 ), Vector2( -12.769, 37.0408 ), Vector2( -12.0808, 39.3892 ), Vector2( -12.4636, 46.4348 ), Vector2( -12.1039, 45.7988 ) ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 100, 300 )
 scale = Vector2( 3, 3 )
@@ -202,11 +327,64 @@ __meta__ = {
 
 [node name="explosion" type="Sprite" parent="."]
 visible = false
-position = Vector2( -9, 1 )
+position = Vector2( -9, 0.764297 )
 texture = ExtResource( 12 )
 
+[node name="turbine1" parent="." instance=ExtResource( 19 )]
+position = Vector2( -16.9381, 15.0352 )
+rotation = -0.045577
+scale = Vector2( 0.5, 0.5 )
+
+[node name="propulsion" parent="turbine1" index="0"]
+position = Vector2( -12.0808, 39.3898 )
+
+[node name="AnimationPlayer" parent="turbine1" index="1"]
+anims/propulsion = SubResource( 8 )
+
+[node name="turbine2" parent="." instance=ExtResource( 19 )]
+position = Vector2( -6.94942, 16.034 )
+rotation = -0.045577
+scale = Vector2( 0.5, 0.5 )
+
+[node name="propulsion" parent="turbine2" index="0"]
+position = Vector2( -12.0808, 39.3898 )
+
+[node name="AnimationPlayer" parent="turbine2" index="1"]
+anims/propulsion = SubResource( 5 )
+
+[node name="turbine3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 17.2732, 16.5335 )
+rotation = -0.045577
+scale = Vector2( 0.5, 0.5 )
+
+[node name="propulsion" parent="turbine3" index="0"]
+position = Vector2( -11.0245, 37.9463 )
+
+[node name="AnimationPlayer" parent="turbine3" index="1"]
+anims/propulsion = SubResource( 6 )
+
+[node name="turbine4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 27.5117, 14.7854 )
+rotation = -0.045577
+scale = Vector2( 0.5, 0.5 )
+
+[node name="propulsion" parent="turbine4" index="0"]
+position = Vector2( -12.0808, 39.3898 )
+
+[node name="AnimationPlayer" parent="turbine4" index="1"]
+anims/propulsion = SubResource( 7 )
+
 [node name="HealthDisplay" parent="." instance=ExtResource( 18 )]
-position = Vector2( -30.7621, 41.2037 )
+light_mask = -2147483640
+position = Vector2( -30.2751, 45.4736 )
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="turbine1"]
+
+[editable path="turbine2"]
+
+[editable path="turbine3"]
+
+[editable path="turbine4"]

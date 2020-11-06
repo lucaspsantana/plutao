@@ -31,7 +31,13 @@ stream = ExtResource( 1 )
 autoplay = true
 
 [node name="GameOver" parent="." instance=ExtResource( 5 )]
+offset = Vector2( 720, 0 )
+transform = Transform2D( 1, 0, 0, 1, 720, 0 )
 
 [node name="Settings" parent="." instance=ExtResource( 6 )]
+offset = Vector2( 720, 0 )
+transform = Transform2D( 1, 0, 0, 1, 720, 0 )
 
 [node name="TitleScreens" parent="." instance=ExtResource( 4 )]
+offset = Vector2( 720, 0 )
+transform = Transform2D( 1, 0, 0, 1, 720, 0 )
