@@ -9,6 +9,7 @@
 resource_name = "propulsion"
 length = 0.2
 loop = true
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("propulsion:texture")
 tracks/0/interp = 1
@@ -29,21 +30,24 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 17.1484, 40.7859, 55.7153, 61.8199 ),
 "update": 0,
-"values": [ Vector2( -13.032, 35.4055 ), Vector2( -12.1421, 38.0752 ), Vector2( -12.6135, 40.1967 ), Vector2( -11.2786, 49.0956 ) ]
+"values": [ Vector2( -13.562, 38.1336 ), Vector2( -11.8771, 39.6666 ), Vector2( -12.6135, 43.6891 ), Vector2( -11.2786, 49.0956 ) ]
 }
 
 [node name="Propulsion" type="Node2D"]
 position = Vector2( -121.151, 344.966 )
 rotation = -3.14159
 scale = Vector2( 7.12352, 8.30372 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 76.6927 ]
+}
 
 [node name="propulsion" type="Sprite" parent="."]
-position = Vector2( -12.5203, 40.8183 )
+position = Vector2( -11.2786, 49.0955 )
 rotation = 3.14159
 scale = Vector2( 0.14038, 0.120428 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "propulsion"

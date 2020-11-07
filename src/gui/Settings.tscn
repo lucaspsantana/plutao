@@ -11,32 +11,32 @@
 text = "Settings"
 
 [node name="Buttons" parent="MarginContainer/VBoxContainer" index="1"]
-margin_bottom = 370.0
+margin_bottom = 356.0
 
 [node name="Sound" type="TextureButton" parent="MarginContainer/VBoxContainer/Buttons" index="0" groups=[
 "buttons",
 ]]
-margin_left = 190.0
-margin_right = 290.0
+margin_left = 130.0
+margin_right = 230.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 4 )
 
 [node name="Music" type="TextureButton" parent="MarginContainer/VBoxContainer/Buttons" index="1" groups=[
 "buttons",
 ]]
-margin_left = 390.0
-margin_right = 490.0
+margin_left = 330.0
+margin_right = 430.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 2 )
 
 [node name="Buttons2" parent="MarginContainer/VBoxContainer" index="2"]
-margin_top = 520.0
-margin_bottom = 620.0
+margin_top = 506.0
+margin_bottom = 606.0
 
 [node name="Return" type="TextureButton" parent="MarginContainer/VBoxContainer/Buttons2" index="0" groups=[
 "buttons",
 ]]
-margin_left = 290.0
-margin_right = 390.0
+margin_left = 230.0
+margin_right = 330.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 3 )

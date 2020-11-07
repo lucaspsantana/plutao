@@ -7,8 +7,8 @@ var life: = 20
 
 var screen_size
 
-func _on_Timer_timeout():
-	limit_shoots()
+#func _on_Timer_timeout():
+#	limit_shoots()
 
 func _on_EnemyDetector_area_entered(area):
 	area.queue_free()
@@ -19,6 +19,10 @@ func _on_EnemyDetector_area_entered(area):
 			$CollisionShape2D.set_deferred("disabled", true)
 			$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)
 			Settings.death = true
+			$Turbines.visible = false
+			$HealthDisplay.visible = false
+			$fire.queue_free()
+			$CollisionShape2D.disabled = true
 			anim_Player.play("explosion")
 			yield(anim_Player, "animation_finished")
 			get_tree().change_scene("res://src/gui/Screens.tscn")
@@ -27,7 +31,7 @@ func _on_EnemyDetector_area_entered(area):
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
-	$Timer.start()
+	#$Timer.start()
 
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
@@ -47,7 +51,6 @@ func _physics_process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
-	$Life.text = str(life)
 
 func start(pos):
 	position = pos
@@ -56,14 +59,16 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func shoot():
-	anim_Player.play("shoot")
+	#anim_Player.play("shoot")
 	var bullet: = preload("res://src/Objects/Bullet.tscn")
 	var bulletNode: = bullet.instance()
 	bulletNode.start($BulletPosition.global_position, -1, self)
 	get_parent().add_child(bulletNode)
 
-func limit_shoots():
-	if get_tree().get_nodes_in_group("bullet").size() < 50:
+func limit_shoots(): #não estou usando, está dando bug
+	print("shoot")
+	shoot()
+	if get_tree().get_nodes_in_group("bullet").size() < 100:
 		shoot()
 
 
