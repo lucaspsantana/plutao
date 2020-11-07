@@ -8,13 +8,13 @@ var life: = 20
 var screen_size
 
 func _on_Timer_timeout():
-	print("shoot")
 	limit_shoots()
 
 func _on_EnemyDetector_area_entered(area):
+	area.queue_free()
+	
 	if area.name != "Player":
 		life -=1
-		$HealthDisplay.update_healthBar(life)
 		if life <= 0:
 			$CollisionShape2D.set_deferred("disabled", true)
 			$EnemyDetector/CollisionShape2D.set_deferred("disabled", true)
@@ -37,6 +37,8 @@ func _input(event):
 		#speed = event.get_speed()
 
 func _physics_process(delta):
+	$HealthDisplay.update_healthBar(life)
+	
 	var velocity: = Vector2()
 	if position.distance_to(target) > 5:
 		velocity = target - position

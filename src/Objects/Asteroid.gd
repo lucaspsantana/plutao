@@ -9,8 +9,6 @@ var life: = 0
 onready var explosion_anim: AnimationPlayer = $explosion_anim
 
 func _ready():
-	print(randon_x)
-	print(randon_y)
 	velocity.x = randon_x
 	velocity.y = randon_y
 	
@@ -18,16 +16,16 @@ func _ready():
 func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	position += velocity * delta
-	print(position)
-	print(delta)
 
 func _on_Visibility_screen_exited():
 	queue_free() # Replace with function body.
 
-
 func _on_Asteroid_area_entered(area):
-	print(area.name)
 	life += 1
+	
+	if(!area.name == "EnemyDetector"):
+		area.queue_free()
+	
 	if life == 5 or area.name == "EnemyDetector":
 		Settings.score += 20
 		explosion_anim.play("explosion")

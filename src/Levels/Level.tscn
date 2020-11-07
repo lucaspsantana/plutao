@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy1.tscn" type="PackedScene" id=2]
@@ -8,9 +8,13 @@
 [ext_resource path="res://assets/audio/music_back.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/space.jpg" type="Texture" id=7]
 [ext_resource path="res://src/Objects/AsteroidsGenerator.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Paths/BossPath.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [ 608.0 ]
+}
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -44,11 +48,91 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Enemy1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 342.24, 56.5686 )
+[node name="Wave1" type="Node2D" parent="."]
+position = Vector2( 310.24, -1055.43 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 92.8628, 61.7647 )
+[node name="Enemy1" parent="Wave1" instance=ExtResource( 2 )]
+position = Vector2( 0, -12 )
+
+[node name="Enemy2" parent="Wave1" instance=ExtResource( 2 )]
+position = Vector2( -132, -56.0001 )
+
+[node name="Enemy3" parent="Wave1" instance=ExtResource( 2 )]
+position = Vector2( 124, -56.0001 )
+
+[node name="Enemy4" parent="Wave1" instance=ExtResource( 2 )]
+position = Vector2( 212, -128 )
+
+[node name="Enemy5" parent="Wave1" instance=ExtResource( 2 )]
+position = Vector2( -224, -128 )
+
+[node name="Wave2" type="Node2D" parent="."]
+position = Vector2( 314.24, -2143.43 )
+
+[node name="Enemy1" parent="Wave2" instance=ExtResource( 2 )]
+
+[node name="Enemy2" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -132, -44.0001 )
+
+[node name="Enemy3" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 124, -44.0001 )
+
+[node name="Enemy4" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 212, -116 )
+
+[node name="Enemy5" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -224, -116 )
+
+[node name="Enemy6" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -52, -132 )
+
+[node name="Enemy7" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 44, -132 )
+
+[node name="Enemy8" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -156, -204 )
+
+[node name="Enemy9" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 128, -212 )
+
+[node name="Enemy10" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 72, -356 )
+
+[node name="Enemy11" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -96, -344 )
+
+[node name="Enemy12" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -8, -272 )
+
+[node name="Enemy13" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -48, -468 )
+
+[node name="Enemy14" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( 28, -472 )
+
+[node name="Enemy15" parent="Wave2" instance=ExtResource( 2 )]
+position = Vector2( -12, -596 )
+
+[node name="Wave3" type="Node2D" parent="."]
+position = Vector2( 310.24, -3655.43 )
+
+[node name="Enemy3" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( 2.6228, -2.80518 )
+
+[node name="Enemy4" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( -185.377, -10.8052 )
+
+[node name="Enemy5" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( 182.623, -18.8052 )
+
+[node name="Enemy6" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( -93.3772, -138.805 )
+
+[node name="Enemy7" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( 78.6228, -154.805 )
+
+[node name="Enemy8" parent="Wave3" instance=ExtResource( 1 )]
+position = Vector2( -5.3772, -302.805 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -56,3 +140,9 @@ stream = ExtResource( 6 )
 [node name="CanvasLayer2" parent="." instance=ExtResource( 3 )]
 
 [node name="Node" parent="." instance=ExtResource( 8 )]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -20, -120 )
+
+[node name="BossPath" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 32, -4989.24 )

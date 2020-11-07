@@ -37,4 +37,5 @@ shape = SubResource( 2 )
 position = Vector2( 0.707094, -23.3345 )
 scale = Vector2( 1.91924, 0.929289 )
 [connection signal="area_entered" from="BulletDetector" to="." method="_on_BulletDetector_area_entered"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]

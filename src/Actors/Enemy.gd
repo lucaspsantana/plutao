@@ -37,14 +37,18 @@ func ShootTimer(delta):
 func Shoot(Gun_Global_Position):
 	var bullet = load("res://src/Objects/Bullet.tscn").instance()
 	bullet.start(Gun_Global_Position, 1, self)
-	get_parent().add_child(bullet)
+	get_parent().get_parent().add_child(bullet)
 
 func _on_BulletDetector_area_entered(area: Area2D) -> void:
 	if(area.actor == self):
 		return
 	
+	area.queue_free()
 	Settings.score +=50
 	TakeDamage()
 
 func _on_VisibilityNotifier2D_viewport_entered(viewport: Viewport) -> void:
+	onscreen = true
+
+func _on_VisibilityNotifier2D_screen_entered() -> void:
 	onscreen = true

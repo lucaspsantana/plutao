@@ -6,7 +6,6 @@ var dir: = Vector2(1,1)
 var pos: = ["Position2D1","Position2D2", "Position2D3", "Position2D4", "Position2D5"]
 
 func _on_Timer_timeout():
-	print("Criou")
 	create_asteroids()
 
 func _ready():
