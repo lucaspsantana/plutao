@@ -70,4 +70,6 @@ func change_screen(new_screen):
 		yield(current_screen.tween, "tween_completed")
 
 func game_over():
+	if Settings.enable_sound:
+		$Music.play()
 	change_screen($GameOver)

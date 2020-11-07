@@ -21,6 +21,7 @@ func TakeDamage():
 	
 	if(life == 0):
 		queue_free()
+		
 
 func ShootTimer(delta):
 	if(!onscreen):

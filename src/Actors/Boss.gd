@@ -82,4 +82,6 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 	HP.value -= 1.5
 	
 	if(HP.value <= 0):
+		get_tree().change_scene("res://src/gui/TitleScreens.tscn")
 		queue_free()
+		
