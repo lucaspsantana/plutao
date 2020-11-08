@@ -177,6 +177,7 @@ scale = Vector2( 0.8, 0.8 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 autoplay = "shoot"
+playback_speed = 3.0
 anims/explosion = SubResource( 3 )
 anims/shoot = SubResource( 4 )
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]

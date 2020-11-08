@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/images-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Boss.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/explosion2/Ativo 9.png" type="Texture" id=3]
+[ext_resource path="res://src/Objects/ExplosionEnemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 68, 76 )
@@ -24,7 +26,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="images-removebg-preview" type="Sprite" parent="."]
+[node name="spriteBoss" type="Sprite" parent="."]
 rotation = -1.5708
 texture = ExtResource( 1 )
 
@@ -46,4 +48,11 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetector"]
 shape = SubResource( 2 )
+
+[node name="explosion" type="Sprite" parent="."]
+visible = false
+position = Vector2( -9, 0.764297 )
+texture = ExtResource( 3 )
+
+[node name="ExplosionEnemy" parent="." instance=ExtResource( 4 )]
 [connection signal="area_entered" from="BulletDetector" to="." method="_on_Area2D_area_entered"]

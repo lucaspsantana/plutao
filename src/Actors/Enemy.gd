@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Enemy
 
+signal death 
+
 var speed
 var life
 var attack_speed
@@ -20,7 +22,8 @@ func TakeDamage():
 	life -= 1
 	
 	if(life == 0):
-		queue_free()
+		emit_signal("death")
+		#queue_free()
 		
 
 func ShootTimer(delta):

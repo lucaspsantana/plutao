@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/spaceship/Ativo 4.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/explosion2/Ativo 5.png" type="Texture" id=4]
+[ext_resource path="res://src/Objects/ExplosionEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/explosion2/Ativo 1.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 74.1023, 81.0907 )
@@ -46,9 +47,11 @@ scale = Vector2( 2.76501, 7.39166 )
 
 [node name="explosion" type="Sprite" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0.555556 )
 position = Vector2( -9, 0.764297 )
-texture = ExtResource( 4 )
+texture = ExtResource( 10 )
+
+[node name="ExplosionEnemy" parent="." instance=ExtResource( 4 )]
+[connection signal="death" from="." to="." method="_on_Enemy1_death"]
 [connection signal="area_entered" from="BulletDetector" to="." method="_on_BulletDetector_area_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]

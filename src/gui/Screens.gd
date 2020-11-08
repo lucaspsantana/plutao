@@ -71,5 +71,6 @@ func change_screen(new_screen):
 
 func game_over():
 	if Settings.enable_sound:
+		print(Settings.enable_sound)
 		$Music.play()
 	change_screen($GameOver)

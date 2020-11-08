@@ -4,6 +4,7 @@ var move_speed = 150
 var move_direction = 0
 
 onready var HP = $HP
+onready var animation: = $ExplosionEnemy
 
 var Phase = 1
 
@@ -82,6 +83,11 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 	HP.value -= 1.5
 	
 	if(HP.value <= 0):
-		get_tree().change_scene("res://src/gui/TitleScreens.tscn")
+		$spriteBoss.visible = false
+		$BulletDetector/CollisionShape2D.disabled = true
+		$CollisionShape2D.disabled = true 
+		animation.play("explosion")
+		yield(animation, "animation_finished")
+		get_tree().change_scene("res://src/gui/Screens.tscn")
 		queue_free()
 		
