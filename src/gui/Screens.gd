@@ -16,6 +16,9 @@ func _ready():
 	if Settings.death:
 		game_over()
 		return
+	if Settings.victory:
+		$End/MarginContainer/VBoxContainer/Message.text += "\n \n %s" % Settings.score
+		change_screen($End)
 	else:
 		change_screen($TitleScreens)
 	
@@ -70,7 +73,7 @@ func change_screen(new_screen):
 		yield(current_screen.tween, "tween_completed")
 
 func game_over():
+	print(Settings.enable_sound)
 	if Settings.enable_sound:
-		print(Settings.enable_sound)
 		$Music.play()
 	change_screen($GameOver)

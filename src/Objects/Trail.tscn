@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Line2D.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 3.48325, 0, 0, Vector2( 0.5, 0.209091 ), 1.94652, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0, 0.811765, 1, 0.486275, 1, 1, 1, 0.439216 )
+
+[node name="Line2D" type="Line2D"]
+z_index = -1
+points = PoolVector2Array( 172.339, 454.177 )
+width_curve = SubResource( 1 )
+gradient = SubResource( 2 )
+script = ExtResource( 1 )

@@ -6,9 +6,6 @@
 
 [node name="TitleScreens" instance=ExtResource( 3 )]
 
-[node name="Label" parent="MarginContainer/VBoxContainer" index="0"]
-text = "Pluto"
-
 [node name="Buttons" parent="MarginContainer/VBoxContainer" index="1"]
 margin_bottom = 356.0
 

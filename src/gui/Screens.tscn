@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/audio/music_back_guitar.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/audio/sound.wav" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/gui/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/gui/Settings.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Asteroid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/gui/End.tscn" type="PackedScene" id=8]
 
 [node name="Screens" type="Node"]
 script = ExtResource( 3 )
@@ -41,3 +42,5 @@ transform = Transform2D( 1, 0, 0, 1, 720, 0 )
 [node name="TitleScreens" parent="." instance=ExtResource( 4 )]
 offset = Vector2( 720, 0 )
 transform = Transform2D( 1, 0, 0, 1, 720, 0 )
+
+[node name="End" parent="." instance=ExtResource( 8 )]
