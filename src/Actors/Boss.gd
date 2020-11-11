@@ -89,6 +89,5 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		animation.play("explosion")
 		yield(animation, "animation_finished")
 		Settings.victory = true
-		get_tree().change_scene("res://src/gui/Screens.tscn")
 		queue_free()
 		

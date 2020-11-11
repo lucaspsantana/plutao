@@ -137,13 +137,11 @@ __meta__ = {
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -26.4284, 16.675 )
-scale = Vector2( 1, 1 )
 
 [node name="Line2D" parent="Position2D" instance=ExtResource( 20 )]
 
 [node name="Position2D2" type="Position2D" parent="."]
 position = Vector2( 26.743, 17.3043 )
-scale = Vector2( 1, 1 )
 
 [node name="Line2D" parent="Position2D2" instance=ExtResource( 20 )]
 

@@ -29,7 +29,6 @@ stream = ExtResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-autoplay = true
 
 [node name="GameOver" parent="." instance=ExtResource( 5 )]
 offset = Vector2( 720, 0 )
